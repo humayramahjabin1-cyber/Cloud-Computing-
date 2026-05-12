@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GitHub Welcome Profile</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background: linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
+      overflow:hidden;
+      color:white;
+      position:relative;
+    }
+
+    /* Floating circles */
+    .circle{
+      position:absolute;
+      border-radius:50%;
+      background:rgba(255,255,255,0.08);
+      animation: float 8s infinite ease-in-out;
+    }
+
+    .circle:nth-child(1){
+      width:200px;
+      height:200px;
+      top:10%;
+      left:10%;
+    }
+
+    .circle:nth-child(2){
+      width:120px;
+      height:120px;
+      bottom:15%;
+      right:12%;
+      animation-duration:10s;
+    }
+
+    .circle:nth-child(3){
+      width:80px;
+      height:80px;
+      top:70%;
+      left:25%;
+      animation-duration:6s;
+    }
+
+    @keyframes float{
+      0%,100%{
+        transform:translateY(0px);
+      }
+      50%{
+        transform:translateY(-20px);
+      }
+    }
+
+    .card{
+      position:relative;
+      z-index:2;
+      width:90%;
+      max-width:700px;
+      padding:50px;
+      text-align:center;
+      background:rgba(255,255,255,0.1);
+      border:1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(15px);
+      border-radius:25px;
+      box-shadow:0 8px 32px rgba(0,0,0,0.3);
+      animation:fadeIn 1.5s ease;
+    }
+
+    .card h1{
+      font-size:3rem;
+      margin-bottom:10px;
+      background:linear-gradient(to right,#ffffff,#93c5fd);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .card h2{
+      font-size:1.5rem;
+      font-weight:300;
+      margin-bottom:20px;
+    }
+
+    .typing{
+      color:#dbeafe;
+      font-size:1.1rem;
+      white-space:nowrap;
+      overflow:hidden;
+      border-right:3px solid white;
+      width:0;
+      margin:auto;
+      animation:
+        typing 4s steps(40,end) forwards,
+        blink .7s infinite;
+    }
+
+    @keyframes typing{
+      from{
+        width:0;
+      }
+      to{
+        width:100%;
+      }
+    }
+
+    @keyframes blink{
+      50%{
+        border-color:transparent;
+      }
+    }
+
+    .buttons{
+      margin-top:35px;
+      display:flex;
+      justify-content:center;
+      gap:15px;
+      flex-wrap:wrap;
+    }
+
+    .buttons a{
+      text-decoration:none;
+      padding:12px 28px;
+      border-radius:30px;
+      color:white;
+      font-weight:600;
+      transition:0.3s;
+      border:1px solid rgba(255,255,255,0.3);
+      background:rgba(255,255,255,0.1);
+    }
+
+    .buttons a:hover{
+      background:white;
+      color:#0f172a;
+      transform:translateY(-4px);
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(30px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @media(max-width:600px){
+      .card h1{
+        font-size:2.2rem;
+      }
+
+      .card{
+        padding:35px 25px;
+      }
+
+      .typing{
+        white-space:normal;
+        border:none;
+        animation:none;
+        width:100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+
+  <div class="card">
+    <h1>Welcome to My Profile</h1>
+
+    <h2>Humayra Mahjabin</h2>
+
+    <p class="typing">
+      Computer Science & Cloud Computing Student • Future Developer • Tech Enthusiast
+    </p>
+
+    <div class="buttons">
+      <a href="#">Projects</a>
+      <a href="#">GitHub</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+
+</body>
+</html>
